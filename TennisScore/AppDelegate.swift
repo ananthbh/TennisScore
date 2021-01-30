@@ -11,9 +11,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window:UIWindow?
+    private var navigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let tennisScoreViewModel = TennisScoreViewModel()
+        let tennisScoreViewController = TennisScoreViewController(viewModel: tennisScoreViewModel)
+        navigationController = UINavigationController(rootViewController: tennisScoreViewController)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

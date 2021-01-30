@@ -12,6 +12,9 @@
 		545D3D7B25C59EAD00DD2CEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545D3D7925C59EAD00DD2CEB /* LaunchScreen.storyboard */; };
 		545D3D8625C59EAD00DD2CEB /* TennisScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3D8525C59EAD00DD2CEB /* TennisScoreTests.swift */; };
 		545D3D9125C59EAE00DD2CEB /* TennisScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3D9025C59EAE00DD2CEB /* TennisScoreUITests.swift */; };
+		545D3DAE25C5A77800DD2CEB /* TennisScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DAD25C5A77800DD2CEB /* TennisScoreViewModel.swift */; };
+		545D3DB825C5A79B00DD2CEB /* TennisScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DB625C5A79B00DD2CEB /* TennisScoreViewController.swift */; };
+		545D3DB925C5A79B00DD2CEB /* TennisScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545D3DB725C5A79B00DD2CEB /* TennisScoreViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		545D3D8C25C59EAE00DD2CEB /* TennisScoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TennisScoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		545D3D9025C59EAE00DD2CEB /* TennisScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisScoreUITests.swift; sourceTree = "<group>"; };
 		545D3D9225C59EAE00DD2CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		545D3DAD25C5A77800DD2CEB /* TennisScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisScoreViewModel.swift; sourceTree = "<group>"; };
+		545D3DB625C5A79B00DD2CEB /* TennisScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisScoreViewController.swift; sourceTree = "<group>"; };
+		545D3DB725C5A79B00DD2CEB /* TennisScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TennisScoreViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				545D3D6E25C59EAB00DD2CEB /* AppDelegate.swift */,
+				545D3DB225C5A77E00DD2CEB /* Score */,
 				545D3D7725C59EAD00DD2CEB /* Assets.xcassets */,
 				545D3D7925C59EAD00DD2CEB /* LaunchScreen.storyboard */,
 				545D3D7C25C59EAD00DD2CEB /* Info.plist */,
@@ -117,6 +124,16 @@
 				545D3D9225C59EAE00DD2CEB /* Info.plist */,
 			);
 			path = TennisScoreUITests;
+			sourceTree = "<group>";
+		};
+		545D3DB225C5A77E00DD2CEB /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				545D3DAD25C5A77800DD2CEB /* TennisScoreViewModel.swift */,
+				545D3DB625C5A79B00DD2CEB /* TennisScoreViewController.swift */,
+				545D3DB725C5A79B00DD2CEB /* TennisScoreViewController.xib */,
+			);
+			path = Score;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				545D3D7B25C59EAD00DD2CEB /* LaunchScreen.storyboard in Resources */,
+				545D3DB925C5A79B00DD2CEB /* TennisScoreViewController.xib in Resources */,
 				545D3D7825C59EAD00DD2CEB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,7 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545D3DAE25C5A77800DD2CEB /* TennisScoreViewModel.swift in Sources */,
 				545D3D6F25C59EAB00DD2CEB /* AppDelegate.swift in Sources */,
+				545D3DB825C5A79B00DD2CEB /* TennisScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
