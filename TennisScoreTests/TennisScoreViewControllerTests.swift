@@ -32,13 +32,13 @@ class TennisScoreViewControllerTests: XCTestCase {
     func testPlayerAScoreButtonAction() {
         tennisScoreViewController?.playerAScoreButton.sendActions(for: .touchUpInside)
         let text = tennisScoreViewController?.scoreLabel.text
-        XCTAssertEqual(text, "15 - 0")
+        XCTAssertEqual(text, "15 - Love")
     }
     
     func testPlayerBScoreButtonAction() {
         tennisScoreViewController?.playerBScoreButton.sendActions(for: .touchUpInside)
         let text = tennisScoreViewController?.scoreLabel.text
-        XCTAssertEqual(text, "0 - 15")
+        XCTAssertEqual(text, "Love - 15")
     }
     
     func testResetButtonAction() {
