@@ -9,8 +9,8 @@ import Foundation
 
 struct TennisScoreViewModel {
     
-    private var playerAScore: Int = 0
-    private var playerBScore: Int = 0
+    private(set) var playerAScore: Int = 0
+    private(set) var playerBScore: Int = 0
     
     //MARK: - Public methods
     
@@ -20,7 +20,8 @@ struct TennisScoreViewModel {
     }
     
     public mutating func reset() {
-        
+        playerAScore = 0
+        playerBScore = 0
     }
     
     //MARK: - Private methods
