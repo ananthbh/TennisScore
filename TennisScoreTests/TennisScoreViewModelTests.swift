@@ -63,6 +63,7 @@ class TennisScoreViewModelTests: XCTestCase {
         score = tennisScoreViewModel?.score(for: .playerA)
         XCTAssertEqual(score?.focusPlayer, .playerA)
         XCTAssertEqual(score?.status, .win)
+        XCTAssertEqual(score?.score, "Player A Win!")
     }
     
     func testPlayerBWinsStraight() {
@@ -73,6 +74,7 @@ class TennisScoreViewModelTests: XCTestCase {
         score = tennisScoreViewModel?.score(for: .playerB)
         XCTAssertEqual(score?.focusPlayer, .playerB)
         XCTAssertEqual(score?.status, .win)
+        XCTAssertEqual(score?.score, "Player B Win!")
     }
     
     //MARK: - Deuce Tests
@@ -105,5 +107,64 @@ class TennisScoreViewModelTests: XCTestCase {
         XCTAssertEqual(score?.score, "Deuce!")
     }
     
+    //MARK: - Advantage Tests
+    
+    func testPlayerAAdvantage() {
+        // Game won by Player A
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        XCTAssertEqual(score?.focusPlayer, .playerA)
+        XCTAssertEqual(score?.status, .advantage)
+        XCTAssertEqual(score?.score, "Player A Advantage!")
+    }
+    
+    func testPlayerAWinAfterAdvantage() {
+        // Game won by Player A
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        XCTAssertEqual(score?.focusPlayer, .playerA)
+        XCTAssertEqual(score?.status, .win)
+        XCTAssertEqual(score?.score, "Player A Win!")
+    }
+    
+    func testPlayerBAdvantage() {
+        // Game won by Player A
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        XCTAssertEqual(score?.focusPlayer, .playerB)
+        XCTAssertEqual(score?.status, .advantage)
+        XCTAssertEqual(score?.score, "Player B Advantage!")
+    }
+    
+    func testPlayerBWinAfterAdvantage() {
+        // Game won by Player A
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        XCTAssertEqual(score?.focusPlayer, .playerB)
+        XCTAssertEqual(score?.status, .win)
+        XCTAssertEqual(score?.score, "Player B Win!")
+    }
     
 }
