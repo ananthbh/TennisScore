@@ -27,6 +27,7 @@ struct TennisScoreViewModel {
     //MARK: - Private methods
     
     private mutating func addScore(player: Player) {
+        guard getStatus() != .win else { return }
         if player == .playerA {
             playerAScore += 1
         } else {

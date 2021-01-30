@@ -21,13 +21,6 @@ class TennisScoreViewControllerTests: XCTestCase {
     override func tearDown() {
         tennisScoreViewController = nil
     }
-    
-    //tests
-    
-    //check tapping first button calls method
-    // second button tap calls method
-    //check label update button 1
-    //check label update button 2
 
     func testPlayerAScoreButtonAction() {
         tennisScoreViewController?.playerAScoreButton.sendActions(for: .touchUpInside)
