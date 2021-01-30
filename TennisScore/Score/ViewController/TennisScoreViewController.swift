@@ -11,6 +11,8 @@ final class TennisScoreViewController: UIViewController {
     
     private(set) var viewModel: TennisScoreViewModel
     
+    //MARK:- Init
+    
     init(viewModel: TennisScoreViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -20,14 +22,19 @@ final class TennisScoreViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK:- Outlets
+    
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var playerAScoreButton: UIButton!
     @IBOutlet weak var playerBScoreButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    //MARK:- Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNavBarTitle()
         addActions()
         reset()
     }
@@ -47,6 +54,10 @@ final class TennisScoreViewController: UIViewController {
     private func updateUI(player: Player) {
         let point = viewModel.score(for: player)
         scoreLabel.text = point.score
+    }
+    
+    private func setupNavBarTitle() {
+        self.navigationItem.title = "Tennis Score"
     }
     
     //MARK: - Actions

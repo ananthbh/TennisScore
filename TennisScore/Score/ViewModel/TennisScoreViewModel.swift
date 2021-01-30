@@ -46,7 +46,7 @@ struct TennisScoreViewModel {
     }
     
     private func getStatus() -> GameStatus {
-        if checkForWin() {
+        if checkWin() {
             return .win
         }
         
@@ -59,7 +59,6 @@ struct TennisScoreViewModel {
         }
         
         return .ongoing
-        
     }
     
     private func getScore() -> String {
@@ -75,7 +74,7 @@ struct TennisScoreViewModel {
     
     //MARK: - Private methods: Game scenarios
     
-    private func checkForWin() -> Bool {
+    private func checkWin() -> Bool {
         let playerAWinScenario = playerBScore >= 4 && playerBScore >= playerAScore + 2
         let playerBWinScenario = playerAScore >= 4 && playerAScore >= playerBScore + 2
         if (playerAWinScenario) || (playerBWinScenario) {
