@@ -49,7 +49,10 @@ struct TennisScoreViewModel {
             return .deuce
         }
         
-        //advantage
+        if checkAdvantage() {
+            return .advantage
+        }
+        
         return .ongoing
         
     }
@@ -80,7 +83,23 @@ struct TennisScoreViewModel {
         return playerAScore >= 3 && playerBScore == playerAScore
     }
     
+    private func checkAdvantage() -> Bool {
+        let playerAAdvantageScenario = playerBScore >= 4 && playerBScore == playerAScore + 1
+        let playerBAdvantageScenario = playerAScore >= 4 && playerAScore == playerBScore + 1
+        if playerAAdvantageScenario || playerBAdvantageScenario {
+            return true
+        }
+        return false
+    }
+    
     //MARK: - Private methods: Helpers
+    
+    private func getPlayerName(player: Player?) -> String {
+        if let player = player {
+            return player == .playerA ? "Player A" : "Player B"
+        }
+        return "??"
+    }
     
     private func calculateScore(score: Int) -> String {
         switch score {
@@ -115,7 +134,9 @@ struct TennisScoreViewModel {
         case .deuce:
             return "Deuce!"
         case .win:
-            return "Win!"
+            return "\(getPlayerName(player: getFocusPlayer())) Win!"
+        case .advantage:
+            return "\(getPlayerName(player: getFocusPlayer())) Advantage!"
         default:
             return "??"
         }
