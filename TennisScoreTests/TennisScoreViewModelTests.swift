@@ -20,7 +20,7 @@ class TennisScoreViewModelTests: XCTestCase {
         tennisScoreViewModel = nil
     }
     
-    //MARK: - Tests
+    //MARK: - OnGoing Tests
     
     func testPlayerAFocusOnGoing() {
         // Game is ongoing and player A is leading
@@ -53,6 +53,8 @@ class TennisScoreViewModelTests: XCTestCase {
         XCTAssertEqual(score?.score, "30 All!")
     }
     
+    //MARK: - Win Tests
+    
     func testPlayerAWinsStraight() {
         // Game won by Player A
         var score = tennisScoreViewModel?.score(for: .playerA)
@@ -72,5 +74,36 @@ class TennisScoreViewModelTests: XCTestCase {
         XCTAssertEqual(score?.focusPlayer, .playerB)
         XCTAssertEqual(score?.status, .win)
     }
+    
+    //MARK: - Deuce Tests
+    
+    func testDeuce() {
+        // Game won by Player A
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        XCTAssertEqual(score?.focusPlayer, .none)
+        XCTAssertEqual(score?.status, .deuce)
+        XCTAssertEqual(score?.score, "Deuce!")
+    }
+    
+    func testDeuceAfterAdvantage() {
+        // Game won by Player A
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        XCTAssertEqual(score?.focusPlayer, .none)
+        XCTAssertEqual(score?.status, .deuce)
+        XCTAssertEqual(score?.score, "Deuce!")
+    }
+    
     
 }
