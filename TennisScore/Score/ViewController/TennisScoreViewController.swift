@@ -28,18 +28,38 @@ final class TennisScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        addActions()
+        reset()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //MARK: - UI
+    private func addActions() {
+        playerAScoreButton.addTarget(self, action: #selector(playerAScoreButtonAction), for: .touchUpInside)
+        playerBScoreButton.addTarget(self, action: #selector(playerBScoreButtonAction), for: .touchUpInside)
+        resetButton.addTarget(self, action: #selector(resetButtonAction), for: .touchUpInside)
     }
-    */
+    
+    private func reset() {
+        viewModel.reset()
+        scoreLabel.text = "Love All!"
+    }
+    
+    private func updateUI(player: Player) {
+        let point = viewModel.score(for: player)
+        scoreLabel.text = point.score
+    }
+    
+    //MARK: - Actions
 
+    @objc private func playerAScoreButtonAction() {
+        updateUI(player: .playerA)
+    }
+    
+    @objc private func playerBScoreButtonAction() {
+        updateUI(player: .playerB)
+    }
+    
+    @objc private func resetButtonAction() {
+        reset()
+    }
 }
