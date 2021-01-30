@@ -45,7 +45,9 @@ struct TennisScoreViewModel {
             return .win
         }
         
-        //deuce
+        if checkDeuce() {
+            return .deuce
+        }
         
         //advantage
         return .ongoing
@@ -53,7 +55,7 @@ struct TennisScoreViewModel {
     }
     
     private func getScore() -> String {
-        guard getStatus() == .ongoing else { return " " }
+        guard getStatus() == .ongoing else { return getSpecialScores() }
         if (playerAScore == playerBScore) {
             return getScoreStringIfEqual()
         } else {
@@ -74,6 +76,9 @@ struct TennisScoreViewModel {
         return false
     }
     
+    private func checkDeuce() -> Bool {
+        return playerAScore >= 3 && playerBScore == playerAScore
+    }
     
     //MARK: - Private methods: Helpers
     
@@ -100,6 +105,17 @@ struct TennisScoreViewModel {
             return "15 All!"
         case (2,2):
             return "30 All!"
+        default:
+            return "??"
+        }
+    }
+    
+    private func getSpecialScores() -> String {
+        switch getStatus() {
+        case .deuce:
+            return "Deuce!"
+        case .win:
+            return "Win!"
         default:
             return "??"
         }
