@@ -7,9 +7,9 @@
 
 import UIKit
 
-class TennisScoreViewController: UIViewController {
+final class TennisScoreViewController: UIViewController {
     
-    private var viewModel: TennisScoreViewModel
+    private(set) var viewModel: TennisScoreViewModel
     
     init(viewModel: TennisScoreViewModel) {
         self.viewModel = viewModel
@@ -19,7 +19,12 @@ class TennisScoreViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var playerAScoreButton: UIButton!
+    @IBOutlet weak var playerBScoreButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

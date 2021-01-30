@@ -17,6 +17,7 @@
 		545D3DCD25C5A8F800DD2CEB /* TennisScoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DCC25C5A8F800DD2CEB /* TennisScoreViewModelTests.swift */; };
 		545D3DDD25C5B26700DD2CEB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DDC25C5B26700DD2CEB /* Player.swift */; };
 		545D3DE225C5B28100DD2CEB /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DE125C5B28100DD2CEB /* GameStatus.swift */; };
+		545D3DE725C5D48C00DD2CEB /* TennisScoreViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DE625C5D48C00DD2CEB /* TennisScoreViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		545D3DCC25C5A8F800DD2CEB /* TennisScoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisScoreViewModelTests.swift; sourceTree = "<group>"; };
 		545D3DDC25C5B26700DD2CEB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		545D3DE125C5B28100DD2CEB /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
+		545D3DE625C5D48C00DD2CEB /* TennisScoreViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisScoreViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				545D3D8725C59EAD00DD2CEB /* Info.plist */,
 				545D3DCC25C5A8F800DD2CEB /* TennisScoreViewModelTests.swift */,
+				545D3DE625C5D48C00DD2CEB /* TennisScoreViewControllerTests.swift */,
 			);
 			path = TennisScoreTests;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545D3DE725C5D48C00DD2CEB /* TennisScoreViewControllerTests.swift in Sources */,
 				545D3DCD25C5A8F800DD2CEB /* TennisScoreViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
