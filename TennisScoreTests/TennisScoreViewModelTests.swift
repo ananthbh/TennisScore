@@ -29,6 +29,7 @@ class TennisScoreViewModelTests: XCTestCase {
         score = tennisScoreViewModel?.score(for: .playerA)
         XCTAssertEqual(score?.focusPlayer, .playerA)
         XCTAssertEqual(score?.status, .ongoing)
+        XCTAssertEqual(score?.score, "30 - 15")
     }
     
     func testPlayerBFocusOnGoing() {
@@ -38,6 +39,7 @@ class TennisScoreViewModelTests: XCTestCase {
         score = tennisScoreViewModel?.score(for: .playerB)
         XCTAssertEqual(score?.focusPlayer, .playerB)
         XCTAssertEqual(score?.status, .ongoing)
+        XCTAssertEqual(score?.score, "15 - 30")
     }
     
     func testPlayerABScoresLevelOnGoing() {
@@ -48,6 +50,7 @@ class TennisScoreViewModelTests: XCTestCase {
         score = tennisScoreViewModel?.score(for: .playerA)
         XCTAssertEqual(score?.focusPlayer, nil)
         XCTAssertEqual(score?.status, .ongoing)
+        XCTAssertEqual(score?.score, "30 - 30")
     }
     
     func testPlayerAWinsStraight() {
