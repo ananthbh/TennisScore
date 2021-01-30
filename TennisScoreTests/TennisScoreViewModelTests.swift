@@ -22,23 +22,51 @@ class TennisScoreViewModelTests: XCTestCase {
     
     //MARK: - Tests
     
-    func testPlayerAWinsStraight() {
-        var score = tennisScoreViewModel?.score(score: .playerA)
-        score = tennisScoreViewModel?.score(score: .playerA)
-        score = tennisScoreViewModel?.score(score: .playerA)
-        score = tennisScoreViewModel?.score(score: .playerA)
+    func testPlayerAFocusOnGoing() {
+        // Game is ongoing and player A is leading
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
         XCTAssertEqual(score?.focusPlayer, .playerA)
-        XCTAssertEqual(score?.score, "win")
+        XCTAssertEqual(score?.status, .ongoing)
+    }
+    
+    func testPlayerBFocusOnGoing() {
+        // Game is ongoing and player B is leading
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        XCTAssertEqual(score?.focusPlayer, .playerB)
+        XCTAssertEqual(score?.status, .ongoing)
+    }
+    
+    func testPlayerABScoresLevelOnGoing() {
+        // Game is ongoing and players scores are level
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        XCTAssertEqual(score?.focusPlayer, nil)
+        XCTAssertEqual(score?.status, .ongoing)
+    }
+    
+    func testPlayerAWinsStraight() {
+        // Game won by Player A
+        var score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        score = tennisScoreViewModel?.score(for: .playerA)
+        XCTAssertEqual(score?.focusPlayer, .playerA)
         XCTAssertEqual(score?.status, .win)
     }
     
     func testPlayerBWinsStraight() {
-        var score = tennisScoreViewModel?.score(score: .playerB)
-        score = tennisScoreViewModel?.score(score: .playerB)
-        score = tennisScoreViewModel?.score(score: .playerB)
-        score = tennisScoreViewModel?.score(score: .playerB)
+        // Game won by Player B
+        var score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
+        score = tennisScoreViewModel?.score(for: .playerB)
         XCTAssertEqual(score?.focusPlayer, .playerB)
-        XCTAssertEqual(score?.score, "win")
         XCTAssertEqual(score?.status, .win)
     }
     

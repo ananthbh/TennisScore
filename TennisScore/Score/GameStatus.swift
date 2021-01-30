@@ -8,7 +8,7 @@
 import Foundation
 
 enum GameStatus {
-    case normal
+    case ongoing
     case deuce
     case advantage
     case win

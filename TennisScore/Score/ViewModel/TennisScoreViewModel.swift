@@ -9,7 +9,8 @@ import Foundation
 
 struct TennisScoreViewModel {
     
-    public func score(score: Player) -> (focusPlayer: Player, status: GameStatus, score: String) {
-        return (.playerA, .normal, "Love all!")
+    public func score(for player
+                        : Player) -> (focusPlayer: Player?, status: GameStatus, score: String) {
+        return (.none, .ongoing, "Love all!")
     }
 }
