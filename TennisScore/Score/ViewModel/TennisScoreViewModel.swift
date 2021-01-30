@@ -15,10 +15,13 @@ struct TennisScoreViewModel {
     //MARK: - Public methods
     
     public mutating func score(for player: Player) -> (focusPlayer: Player?, status: GameStatus, score: String) {
-        self.addScore(player: player)
+        addScore(player: player)
         return (getFocusPlayer(), getStatus(), getScore())
     }
     
+    public mutating func reset() {
+        
+    }
     
     //MARK: - Private methods
     

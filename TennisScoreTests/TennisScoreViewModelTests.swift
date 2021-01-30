@@ -167,4 +167,12 @@ class TennisScoreViewModelTests: XCTestCase {
         XCTAssertEqual(score?.score, "Player B Win!")
     }
     
+    //MARK: - Reset
+    
+    func testReset() {
+        tennisScoreViewModel?.reset()
+        XCTAssertEqual(tennisScoreViewModel?.playerAScore, 0)
+        XCTAssertEqual(tennisScoreViewModel?.playerBScore, 0)
+    }
+    
 }
