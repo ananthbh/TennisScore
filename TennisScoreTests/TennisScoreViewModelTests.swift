@@ -22,6 +22,24 @@ class TennisScoreViewModelTests: XCTestCase {
     
     //MARK: - Tests
     
+    func testPlayerAWinsStraight() {
+        var score = tennisScoreViewModel?.score(score: .playerA)
+        score = tennisScoreViewModel?.score(score: .playerA)
+        score = tennisScoreViewModel?.score(score: .playerA)
+        score = tennisScoreViewModel?.score(score: .playerA)
+        XCTAssertEqual(score?.focusPlayer, .playerA)
+        XCTAssertEqual(score?.score, "win")
+        XCTAssertEqual(score?.status, .win)
+    }
     
+    func testPlayerBWinsStraight() {
+        var score = tennisScoreViewModel?.score(score: .playerB)
+        score = tennisScoreViewModel?.score(score: .playerB)
+        score = tennisScoreViewModel?.score(score: .playerB)
+        score = tennisScoreViewModel?.score(score: .playerB)
+        XCTAssertEqual(score?.focusPlayer, .playerB)
+        XCTAssertEqual(score?.score, "win")
+        XCTAssertEqual(score?.status, .win)
+    }
     
 }
