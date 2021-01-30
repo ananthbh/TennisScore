@@ -15,6 +15,8 @@
 		545D3DB825C5A79B00DD2CEB /* TennisScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DB625C5A79B00DD2CEB /* TennisScoreViewController.swift */; };
 		545D3DB925C5A79B00DD2CEB /* TennisScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545D3DB725C5A79B00DD2CEB /* TennisScoreViewController.xib */; };
 		545D3DCD25C5A8F800DD2CEB /* TennisScoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DCC25C5A8F800DD2CEB /* TennisScoreViewModelTests.swift */; };
+		545D3DDD25C5B26700DD2CEB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DDC25C5B26700DD2CEB /* Player.swift */; };
+		545D3DE225C5B28100DD2CEB /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3DE125C5B28100DD2CEB /* GameStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		545D3DB625C5A79B00DD2CEB /* TennisScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisScoreViewController.swift; sourceTree = "<group>"; };
 		545D3DB725C5A79B00DD2CEB /* TennisScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TennisScoreViewController.xib; sourceTree = "<group>"; };
 		545D3DCC25C5A8F800DD2CEB /* TennisScoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisScoreViewModelTests.swift; sourceTree = "<group>"; };
+		545D3DDC25C5B26700DD2CEB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		545D3DE125C5B28100DD2CEB /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +133,29 @@
 		545D3DB225C5A77E00DD2CEB /* Score */ = {
 			isa = PBXGroup;
 			children = (
-				545D3DAD25C5A77800DD2CEB /* TennisScoreViewModel.swift */,
+				545D3DD825C5B0BE00DD2CEB /* ViewModel */,
+				545D3DD425C5B0B600DD2CEB /* ViewController */,
+				545D3DDC25C5B26700DD2CEB /* Player.swift */,
+				545D3DE125C5B28100DD2CEB /* GameStatus.swift */,
+			);
+			path = Score;
+			sourceTree = "<group>";
+		};
+		545D3DD425C5B0B600DD2CEB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
 				545D3DB625C5A79B00DD2CEB /* TennisScoreViewController.swift */,
 				545D3DB725C5A79B00DD2CEB /* TennisScoreViewController.xib */,
 			);
-			path = Score;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		545D3DD825C5B0BE00DD2CEB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				545D3DAD25C5A77800DD2CEB /* TennisScoreViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545D3DDD25C5B26700DD2CEB /* Player.swift in Sources */,
 				545D3DAE25C5A77800DD2CEB /* TennisScoreViewModel.swift in Sources */,
+				545D3DE225C5B28100DD2CEB /* GameStatus.swift in Sources */,
 				545D3D6F25C59EAB00DD2CEB /* AppDelegate.swift in Sources */,
 				545D3DB825C5A79B00DD2CEB /* TennisScoreViewController.swift in Sources */,
 			);
