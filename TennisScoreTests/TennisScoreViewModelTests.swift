@@ -50,7 +50,7 @@ class TennisScoreViewModelTests: XCTestCase {
         score = tennisScoreViewModel?.score(for: .playerA)
         XCTAssertEqual(score?.focusPlayer, nil)
         XCTAssertEqual(score?.status, .ongoing)
-        XCTAssertEqual(score?.score, "30 - 30")
+        XCTAssertEqual(score?.score, "30 All!")
     }
     
     func testPlayerAWinsStraight() {
