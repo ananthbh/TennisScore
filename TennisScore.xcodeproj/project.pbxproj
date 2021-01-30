@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		545D3D6F25C59EAB00DD2CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3D6E25C59EAB00DD2CEB /* AppDelegate.swift */; };
-		545D3D7125C59EAB00DD2CEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3D7025C59EAB00DD2CEB /* SceneDelegate.swift */; };
-		545D3D7325C59EAB00DD2CEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3D7225C59EAB00DD2CEB /* ViewController.swift */; };
-		545D3D7625C59EAB00DD2CEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545D3D7425C59EAB00DD2CEB /* Main.storyboard */; };
 		545D3D7825C59EAD00DD2CEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545D3D7725C59EAD00DD2CEB /* Assets.xcassets */; };
 		545D3D7B25C59EAD00DD2CEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545D3D7925C59EAD00DD2CEB /* LaunchScreen.storyboard */; };
 		545D3D8625C59EAD00DD2CEB /* TennisScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D3D8525C59EAD00DD2CEB /* TennisScoreTests.swift */; };
@@ -37,9 +34,6 @@
 /* Begin PBXFileReference section */
 		545D3D6B25C59EAB00DD2CEB /* TennisScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545D3D6E25C59EAB00DD2CEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		545D3D7025C59EAB00DD2CEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		545D3D7225C59EAB00DD2CEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		545D3D7525C59EAB00DD2CEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		545D3D7725C59EAD00DD2CEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545D3D7A25C59EAD00DD2CEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		545D3D7C25C59EAD00DD2CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,9 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				545D3D6E25C59EAB00DD2CEB /* AppDelegate.swift */,
-				545D3D7025C59EAB00DD2CEB /* SceneDelegate.swift */,
-				545D3D7225C59EAB00DD2CEB /* ViewController.swift */,
-				545D3D7425C59EAB00DD2CEB /* Main.storyboard */,
 				545D3D7725C59EAD00DD2CEB /* Assets.xcassets */,
 				545D3D7925C59EAD00DD2CEB /* LaunchScreen.storyboard */,
 				545D3D7C25C59EAD00DD2CEB /* Info.plist */,
@@ -233,7 +224,6 @@
 			files = (
 				545D3D7B25C59EAD00DD2CEB /* LaunchScreen.storyboard in Resources */,
 				545D3D7825C59EAD00DD2CEB /* Assets.xcassets in Resources */,
-				545D3D7625C59EAB00DD2CEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545D3D7325C59EAB00DD2CEB /* ViewController.swift in Sources */,
 				545D3D6F25C59EAB00DD2CEB /* AppDelegate.swift in Sources */,
-				545D3D7125C59EAB00DD2CEB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +284,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		545D3D7425C59EAB00DD2CEB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				545D3D7525C59EAB00DD2CEB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		545D3D7925C59EAD00DD2CEB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,6 +418,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TennisScore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,7 +426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tennis.TennisScore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -456,6 +437,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TennisScore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,7 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tennis.TennisScore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
